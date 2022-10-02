@@ -1,14 +1,14 @@
 {
   "name": "vnx-web-dev-virtual-class-2022.*",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "homepage": "./",
   "application-type": "mobile",
   "scripts": {
-    "bootstrap": "mkdir src/settings && cp default.settings.json src/settings/index.json",
-    "start": "yarn schema && REACT_APP_MESSAGING_URL=ws://localhost:8088 react-scripts start",
+    "bootstrap": "mkdir src/settings && copy default.settings.json src/settings/index.json",
+    "start": "yarn schema && react-scripts start",
     "schema": "mkdir -p build && npx ts-schema src/schema.ts build",
-    "prodbuild": "cross-env GENERATE_SOURCEMAP=false react-scripts build && cp package.json build/",
+    "prodbuild": "cross-env GENERATE_SOURCEMAP=false react-scripts build && copy package.json build\\",
     "build": "rimraf build && yarn prodbuild && yarn schema && omg app build",
     "eject": "react-scripts eject",
     "pub": "yarn build && omg app publish",
